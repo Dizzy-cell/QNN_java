@@ -126,7 +126,7 @@ Java_com_qcom_aistack_1superres_QNNHelper_initQNN(JNIEnv *env, jobject thiz, job
 //        modelobj = new ESRGAN();
 //    }
     //Changing Preprocessing/PostProcessing for XLSR
-    else if(strcmp(cstr,"xlsr.bin")==0 || strcmp(cstr,"libxlsr.so")==0){
+    else if(strcmp(cstr,"xlsr_nhwc.bin")==0 || strcmp(cstr,"libxlsr.so")==0){
         modelobj = new XLSR();
     }
     //Changing Preprocessing/PostProcessing for Quick_SR_Large

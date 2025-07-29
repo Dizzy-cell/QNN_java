@@ -30,8 +30,8 @@ compile_job = hub.submit_compile_job(
     model=model_onnx,
     device=device,
     input_specs=dict(image=input_shape),
-    #options="--target_runtime qnn_context_binary --force_channel_last_input image --force_channel_last_output output_0",
-    options="--target_runtime qnn_lib_aarch64_android --force_channel_last_input image --force_channel_last_output output_0"
+    options="--target_runtime qnn_context_binary --force_channel_last_input image --force_channel_last_output output_0",
+    #options="--target_runtime qnn_lib_aarch64_android --force_channel_last_input image --force_channel_last_output output_0"
 )
 
 # Get target model to run on-device

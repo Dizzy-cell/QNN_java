@@ -55,7 +55,7 @@ public class QNNActivity extends AppCompatActivity {
         put(modeloptions[1] + "|" + backendname[0], "libsesr_w8a8.so");
         put(modeloptions[1] + "|" + backendname[1], "esrgan.bin");
         put(modeloptions[2] + "|" + backendname[0], "libxlsr.so");
-        put(modeloptions[2] + "|" + backendname[1], "xlsr.bin");
+        put(modeloptions[2] + "|" + backendname[1], "xlsr_nhwc.bin");
         put(modeloptions[3] + "|" + backendname[0], "libQuicksrnet_large_w8a8.so");
         put(modeloptions[3] + "|" + backendname[1], "Quicksrnet_large_w8a8.serialized.bin");
         put(modeloptions[4] + "|" + backendname[0], "libQuicksrnet_medium_w8a8.so");
