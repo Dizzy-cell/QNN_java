@@ -255,16 +255,16 @@ sample_app::StatusCode sample_app::QnnSampleApp::createFromBinary(char* buffer, 
     if (nullptr == m_qnnFunctionPointers.qnnSystemInterface.systemContextCreate ||
         nullptr == m_qnnFunctionPointers.qnnSystemInterface.systemContextGetBinaryInfo ||
         nullptr == m_qnnFunctionPointers.qnnSystemInterface.systemContextFree) {
-        __android_log_print(ANDROID_LOG_ERROR, "QNN ", "QNN System function pointers are not populated\n");
+        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "QNN System function pointers are not populated\n");
         return StatusCode::FAILURE;
     }
 
     if (0 == bufferSize) {
-        __android_log_print(ANDROID_LOG_ERROR, "QNN ", "Received path to an empty file. Nothing to deserialize\n");
+        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "Received path to an empty file. Nothing to deserialize\n");
         return StatusCode::FAILURE;
     }
     if (!buffer) {
-        __android_log_print(ANDROID_LOG_ERROR, "QNN ", "Failed to allocate memory.\n");
+        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "Failed to allocate memory.\n");
         return StatusCode::FAILURE;
     }
 
@@ -272,7 +272,7 @@ sample_app::StatusCode sample_app::QnnSampleApp::createFromBinary(char* buffer, 
     auto returnStatus = StatusCode::SUCCESS;
     QnnSystemContext_Handle_t sysCtxHandle{nullptr};
     if (QNN_SUCCESS != m_qnnFunctionPointers.qnnSystemInterface.systemContextCreate(&sysCtxHandle)) {
-        __android_log_print(ANDROID_LOG_ERROR, "QNN ", "Could not create system handle.\n");
+        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "Could not create system handle.\n");
 //    LOGE("Could not create system handle.");
         returnStatus = StatusCode::FAILURE;
     }
@@ -285,7 +285,7 @@ sample_app::StatusCode sample_app::QnnSampleApp::createFromBinary(char* buffer, 
                 bufferSize,
                 &binaryInfo,
                 &binaryInfoSize)) {
-        __android_log_print(ANDROID_LOG_ERROR, "QNN ", "Failed to get context binary info\n");
+        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "Failed to get context binary info\n");
 //    LOGE("Failed to get context binary info");
         returnStatus = StatusCode::FAILURE;
     }
@@ -293,7 +293,7 @@ sample_app::StatusCode sample_app::QnnSampleApp::createFromBinary(char* buffer, 
     // fill GraphInfo_t based on binary info
     if (StatusCode::SUCCESS == returnStatus &&
         !copyMetadataToGraphsInfo(binaryInfo, m_graphsInfo, m_graphsCount)) {
-        __android_log_print(ANDROID_LOG_ERROR, "QNN ", "Failed to copy metadata.\n");
+        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "Failed to copy metadata.\n");
 //    LOGE("Failed to copy metadata.");
         returnStatus = StatusCode::FAILURE;
     }
@@ -302,7 +302,7 @@ sample_app::StatusCode sample_app::QnnSampleApp::createFromBinary(char* buffer, 
 
     if (StatusCode::SUCCESS == returnStatus &&
         nullptr == m_qnnFunctionPointers.qnnInterface.contextCreateFromBinary) {
-        __android_log_print(ANDROID_LOG_ERROR, "QNN ", "contextCreateFromBinaryFnHandle is nullptr.\n");
+        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "contextCreateFromBinaryFnHandle is nullptr.\n");
 //    LOGE("contextCreateFromBinaryFnHandle is nullptr.");
         returnStatus = StatusCode::FAILURE;
     }
@@ -315,7 +315,7 @@ sample_app::StatusCode sample_app::QnnSampleApp::createFromBinary(char* buffer, 
                 bufferSize,
                 &m_context,
                 m_profileBackendHandle)) {
-        __android_log_print(ANDROID_LOG_ERROR, "QNN ", "Could not create context from binary.\n");
+        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "Could not create context from binary.\n");
 //    LOGE("Could not create context from binary.");
         returnStatus = StatusCode::FAILURE;
     }
@@ -326,7 +326,7 @@ sample_app::StatusCode sample_app::QnnSampleApp::createFromBinary(char* buffer, 
     if (StatusCode::SUCCESS == returnStatus) {
         for (size_t graphIdx = 0; graphIdx < m_graphsCount; graphIdx++) {
             if (nullptr == m_qnnFunctionPointers.qnnInterface.graphRetrieve) {
-                __android_log_print(ANDROID_LOG_ERROR, "QNN ", "graphRetrieveFnHandle is nullptr.\n");
+                __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "graphRetrieveFnHandle is nullptr.\n");
 //        LOGE("graphRetrieveFnHandle is nullptr.");
                 returnStatus = StatusCode::FAILURE;
                 break;
@@ -334,7 +334,7 @@ sample_app::StatusCode sample_app::QnnSampleApp::createFromBinary(char* buffer, 
             if (QNN_SUCCESS !=
                 m_qnnFunctionPointers.qnnInterface.graphRetrieve(
                         m_context, (*m_graphsInfo)[graphIdx].graphName, &((*m_graphsInfo)[graphIdx].graph))) {
-                __android_log_print(ANDROID_LOG_ERROR, "QNN ", "Unable to retrieve graph handle for graph Idx.\n");
+                __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "Unable to retrieve graph handle for graph Idx.\n");
 //        LOGE("Unable to retrieve graph handle for graph Idx: %d", graphIdx);
                 returnStatus = StatusCode::FAILURE;
             }

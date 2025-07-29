@@ -90,3 +90,13 @@
 1362	1935	1753759030870305771	/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/build/intermediates/cxx/Debug/3au6a1v3/obj/arm64-v8a/libImageSuperResolution.so	e93bd82008291f33
 1	1285	1753759137311432479	CMakeFiles/ImageSuperResolution.dir/src/ImageSuperResolution.cpp.o	be3195a06b6e4285
 1285	1834	1753759137867511304	/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/build/intermediates/cxx/Debug/3au6a1v3/obj/arm64-v8a/libImageSuperResolution.so	e93bd82008291f33
+2	1628	1753770374441896509	CMakeFiles/ImageSuperResolution.dir/src/QnnSampleApp.cpp.o	1c05b3b009461432
+2	1913	1753770374725838603	CMakeFiles/ImageSuperResolution.dir/src/inference.cpp.o	3651514dd372662
+1913	2463	1753770375283310674	/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/build/intermediates/cxx/Debug/3au6a1v3/obj/arm64-v8a/libImageSuperResolution.so	e93bd82008291f33
+2	619	1753770734102490240	CMakeFiles/ImageSuperResolution.dir/Utils/DynamicLoadUtil.cpp.o	37bc0865289f4e3c
+2	1032	1753770734511873288	CMakeFiles/ImageSuperResolution.dir/Utils/IOTensor.cpp.o	e1f3e80f690482c8
+1	1334	1753770734813185787	CMakeFiles/ImageSuperResolution.dir/src/ImageSuperResolution.cpp.o	be3195a06b6e4285
+1	1402	1753770734883914904	CMakeFiles/ImageSuperResolution.dir/src/QnnSampleApp.cpp.o	1c05b3b009461432
+2	1637	1753770735114632202	CMakeFiles/ImageSuperResolution.dir/Utils/QnnSampleAppUtils.cpp.o	fcc65c4c5f3f5cec
+1	1758	1753770735238338574	CMakeFiles/ImageSuperResolution.dir/src/inference.cpp.o	3651514dd372662
+1758	2295	1753770735782779612	/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/build/intermediates/cxx/Debug/3au6a1v3/obj/arm64-v8a/libImageSuperResolution.so	e93bd82008291f33

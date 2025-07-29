@@ -1,7 +1,7 @@
 //==============================================================================
 //
-//  Copyright (c) 2019-2023 Qualcomm Technologies, Inc.
-//  All Rights Reserved.
+//  Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+//  All rights reserved.
 //  Confidential and Proprietary - Qualcomm Technologies, Inc.
 //
 //==============================================================================
@@ -19,61 +19,68 @@
 #include "SampleApp.hpp"
 
 namespace qnn {
-namespace tools {
-namespace sample_app {
+    namespace tools {
+        namespace sample_app {
 
-enum class ProfilingLevel { OFF, BASIC, DETAILED, INVALID };
+            enum class ProfilingLevel { OFF, BASIC, DETAILED, INVALID };
 
-using ReadInputListRetType_t = std::
-    tuple<std::vector<std::vector<std::string>>, std::unordered_map<std::string, uint32_t>, bool>;
+            using ReadInputListRetType_t = std::
+            tuple<std::vector<std::vector<std::string>>, std::unordered_map<std::string, uint32_t>, bool>;
 
-ReadInputListRetType_t readInputList(std::string inputFileListPath);
+            ReadInputListRetType_t readInputList(std::string inputFileListPath);
 
-using ReadInputListsRetType_t = std::tuple<std::vector<std::vector<std::vector<std::string>>>,
-                                           std::vector<std::unordered_map<std::string, uint32_t>>,
-                                           bool>;
+            using ReadInputListsRetType_t = std::tuple<std::vector<std::vector<std::vector<std::string>>>,
+                    std::vector<std::unordered_map<std::string, uint32_t>>,
+                    bool>;
 
-ReadInputListsRetType_t readInputLists(std::vector<std::string> inputFileListPath);
+            ReadInputListsRetType_t readInputLists(std::vector<std::string> inputFileListPath);
 
-std::unordered_map<std::string, uint32_t> extractInputNameIndices(const std::string &inputLine,
-                                                                  const std::string &separator);
+            std::unordered_map<std::string, uint32_t> extractInputNameIndices(const std::string &inputLine,
+                                                                              const std::string &separator);
 
-std::string sanitizeTensorName(std::string name);
+            std::string sanitizeTensorName(std::string name);
 
-ProfilingLevel parseProfilingLevel(std::string profilingLevelString);
+            ProfilingLevel parseProfilingLevel(std::string profilingLevelString);
 
-void parseInputFilePaths(std::vector<std::string> &inputFilePaths,
-                         std::vector<std::string> &paths,
-                         std::string separator);
+            void parseInputFilePaths(std::vector<std::string> &inputFilePaths,
+                                     std::vector<std::string> &paths,
+                                     std::string separator);
 
-void split(std::vector<std::string> &splitString,
-           const std::string &tokenizedString,
-           const char separator);
+            void split(std::vector<std::string> &splitString,
+                       const std::string &tokenizedString,
+                       const char separator);
 
-bool copyMetadataToGraphsInfo(const QnnSystemContext_BinaryInfo_t *binaryInfo,
-                              qnn_wrapper_api::GraphInfo_t **&graphsInfo,
-                              uint32_t &graphsCount);
+            std::string stripWhitespace(std::string &str);
 
-bool copyGraphsInfo(const QnnSystemContext_GraphInfo_t *graphsInput,
-                    const uint32_t numGraphs,
-                    qnn_wrapper_api::GraphInfo_t **&graphsInfo);
+            bool copyMetadataToGraphsInfo(const QnnSystemContext_BinaryInfo_t *binaryInfo,
+                                          qnn_wrapper_api::GraphInfo_t **&graphsInfo,
+                                          uint32_t &graphsCount);
 
-bool copyGraphsInfoV1(const QnnSystemContext_GraphInfoV1_t *graphInfoSrc,
-                      qnn_wrapper_api::GraphInfo_t *graphInfoDst);
+            bool copyGraphsInfo(const QnnSystemContext_GraphInfo_t *graphsInput,
+                                const uint32_t numGraphs,
+                                qnn_wrapper_api::GraphInfo_t **&graphsInfo);
 
-bool copyTensorsInfo(const Qnn_Tensor_t *tensorsInfoSrc,
-                     Qnn_Tensor_t *&tensorWrappers,
-                     uint32_t tensorsCount);
+            bool copyGraphsInfoV1(const QnnSystemContext_GraphInfoV1_t *graphInfoSrc,
+                                  qnn_wrapper_api::GraphInfo_t *graphInfoDst);
 
-bool deepCopyQnnTensorInfo(Qnn_Tensor_t *dst, const Qnn_Tensor_t *src);
+            bool copyGraphsInfoV3(const QnnSystemContext_GraphInfoV3_t *graphInfoSrc,
+                                  qnn_wrapper_api::GraphInfo_t *graphInfoDst);
 
-QnnLog_Level_t parseLogLevel(std::string logLevelString);
+            bool copyTensorsInfo(const Qnn_Tensor_t *tensorsInfoSrc,
+                                 Qnn_Tensor_t *&tensorWrappers,
+                                 uint32_t tensorsCount);
 
-void inline exitWithMessage(std::string &&msg, int code) {
-  std::cerr << msg << std::endl;
-  std::exit(code);
-}
+            bool deepCopyQnnTensorInfo(Qnn_Tensor_t *dst, const Qnn_Tensor_t *src);
 
-}  // namespace sample_app
-}  // namespace tools
+            QnnLog_Level_t parseLogLevel(std::string logLevelString);
+
+            unsigned int parseUintArg(std::string numString);
+
+            void inline exitWithMessage(std::string &&msg, int code) {
+                std::cerr << msg << std::endl;
+                std::exit(code);
+            }
+
+        }  // namespace sample_app
+    }  // namespace tools
 }  // namespace qnn

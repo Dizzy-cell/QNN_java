@@ -156,13 +156,14 @@ std::string build_network(const char * modelPath_cstr, const char* backEndPath_c
         __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "finalizeGraphs done\n");
 
     } else {
+
         __android_log_print(ANDROID_LOG_ERROR, "QNN_INF ", "create binary\n");
         if (sample_app::StatusCode::SUCCESS != app->createFromBinary(buffer, bufferSize)) {
             outputLogger = "Create From Binary failure";
 //            LOGE(outputLogger);
             return outputLogger;
         }
-        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "else.............\n");
+        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "Create from Binary ok!");
     }
 
     __android_log_print(ANDROID_LOG_ERROR, "QNN ", "sample app done\n");
