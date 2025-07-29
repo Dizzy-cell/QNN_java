@@ -1,0 +1,38 @@
+{
+  "buildFiles": [
+    "/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/honor/Library/Android/sdk/cmake/3.18.1/bin/ninja",
+      "-C",
+      "/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/.cxx/Debug/3m4t1t69/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/honor/Library/Android/sdk/cmake/3.18.1/bin/ninja",
+    "-C",
+    "/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/.cxx/Debug/3m4t1t69/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "ImageSuperResolution::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "ImageSuperResolution",
+      "output": "/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/build/intermediates/cxx/Debug/3m4t1t69/obj/arm64-v8a/libImageSuperResolution.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/Users/honor/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+      "cppCompilerExecutable": "/Users/honor/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

@@ -1,0 +1,8 @@
+/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/src/main/cpp/include/Model.h
+/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/src/main/cpp/include/QnnTypeMacros.hpp
+/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/src/main/cpp/include/SESR.h
+/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/src/main/cpp/include/SRGAN.h
+/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/src/main/cpp/include/XLSR.h
+/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/src/main/cpp/include/QuickSRNetLarge.h
+/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/src/main/cpp/include/QuickSRNetMedium.h
+/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/src/main/cpp/include/QuickSRNetSmall.h

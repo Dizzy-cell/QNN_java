@@ -1,0 +1,3 @@
+/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/.cxx/Debug/3au6a1v3/arm64-v8a/CMakeFiles/ImageSuperResolution.dir
+/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/.cxx/Debug/3au6a1v3/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/.cxx/Debug/3au6a1v3/arm64-v8a/CMakeFiles/rebuild_cache.dir
