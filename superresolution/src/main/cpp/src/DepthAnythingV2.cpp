@@ -35,6 +35,18 @@ void DepthAnythingV2::postprocess(cv::Mat &outputimg) {
     LOGI("width = %d",outputimg.cols);
     LOGI("height = %d\n",outputimg.rows);
     LOGI("channel = %d\n",outputimg.channels());
+    double minVal, maxVal;
+    cv::minMaxLoc(outputimg, &minVal, &maxVal);
+
+    LOGI("min = %f, max = %f", minVal, maxVal);
+
+    // 2. 归一化到 [0,1]
+    if (maxVal > minVal) {
+        outputimg = (outputimg - minVal) / (maxVal - minVal);
+    } else {
+        outputimg = cv::Mat::zeros(outputimg.size(), outputimg.type());
+    }
+
     outputimg.convertTo(outputimg,CV_8UC3, 255);
     LOGI("postprocess done");
 }
