@@ -226,11 +226,11 @@ bool executeModel(cv::Mat &inputimg, cv::Mat &outputimg, float &milli_time, Mode
 
     for(int i = 0;i<dims.size();i++)
     {
-        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "********************************************************************dims = %lu\n >>>>",dims[i]);
+        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "***********************************dims = %lu\n >>>>",dims[i]);
     }
     outputimg = cv::Mat(512, 512, CV_32FC3, out.data);
 
-    __android_log_print(ANDROID_LOG_ERROR, "QNN ", "");
+    __android_log_print(ANDROID_LOG_ERROR, "QNN_INF ", "");
 
     struct timeval pp_start_time, pp_end_time;
     float pp_seconds, pp_useconds, pp_milli_time;

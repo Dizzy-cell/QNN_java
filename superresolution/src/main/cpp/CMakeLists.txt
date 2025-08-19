@@ -47,6 +47,9 @@ add_library( # Sets the name of the library.
                 src/QuickSRNetLarge.cpp include/QuickSRNetLarge.h
                 src/QuickSRNetMedium.cpp include/QuickSRNetMedium.h
                 src/QuickSRNetSmall.cpp include/QuickSRNetSmall.h
+
+                src/DepthAnythingV2.cpp include/DepthAnythingV2.h
+
               Utils/DynamicLoadUtil.cpp
               Log/Logger.cpp
         )

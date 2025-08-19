@@ -24,3 +24,5 @@
 1758	2295	1753770735782779612	/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/build/intermediates/cxx/Debug/3au6a1v3/obj/arm64-v8a/libImageSuperResolution.so	e93bd82008291f33
 1	1347	1753771495339647601	CMakeFiles/ImageSuperResolution.dir/src/ImageSuperResolution.cpp.o	be3195a06b6e4285
 1347	1915	1753771495913709383	/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/build/intermediates/cxx/Debug/3au6a1v3/obj/arm64-v8a/libImageSuperResolution.so	e93bd82008291f33
+1	1807	1755501289551954733	CMakeFiles/ImageSuperResolution.dir/src/inference.cpp.o	3651514dd372662
+1807	2371	1755501290124825658	/Users/honor/ai-hub-models/ai-solutions/android-QNN/01-ImageSuperResolution/superresolution/build/intermediates/cxx/Debug/3au6a1v3/obj/arm64-v8a/libImageSuperResolution.so	e93bd82008291f33

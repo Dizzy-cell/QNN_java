@@ -711,18 +711,18 @@ sample_app::StatusCode sample_app::QnnSampleApp::executeGraphs(float* input_buff
             }
 
         }
-        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "populateInputTensor done\n");
+    //  __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "populateInputTensor done\n");
 
-        float* bufferToWrite0 = reinterpret_cast<float*>(QNN_TENSOR_GET_CLIENT_BUF(outputs).data);
-        float* bufferInput = reinterpret_cast<float*>(QNN_TENSOR_GET_CLIENT_BUF(inputs).data);
-        for(int i=0;i<10;i++)
-        {
-            __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "before output buffer[%d] = %f\n",i,bufferToWrite0[i]);
-            __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "before input buffer[%d] = %f\n",i,bufferInput[i]);
-        }
+//        float* bufferToWrite0 = reinterpret_cast<float*>(QNN_TENSOR_GET_CLIENT_BUF(outputs).data);
+//        float* bufferInput = reinterpret_cast<float*>(QNN_TENSOR_GET_CLIENT_BUF(inputs).data);
+//        for(int i=0;i<10;i++)
+//        {
+//            __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "before output buffer[%d] = %f\n",i,bufferToWrite0[i]);
+//            __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "before input buffer[%d] = %f\n",i,bufferInput[i]);
+//        }
 
-        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "outputs version: %d",outputs->version);
-        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "outputs v1 dataType: %d",outputs->v1.dataType);
+//        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "outputs version: %d",outputs->version);
+//        __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "outputs v1 dataType: %d",outputs->v1.dataType);
 
         ///////////
         if (StatusCode::SUCCESS == returnStatus) {

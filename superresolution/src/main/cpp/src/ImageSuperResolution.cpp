@@ -15,6 +15,8 @@
 #include <opencv2/imgproc/types_c.h>
 #include "../include/inference.h"
 
+#include "../include/DepthAnythingV2.h"
+
 #include <inttypes.h>
 
 #include <cstring>
@@ -140,6 +142,9 @@ Java_com_qcom_aistack_1superres_QNNHelper_initQNN(JNIEnv *env, jobject thiz, job
     //Changing Preprocessing/PostProcessing for Quick_SR_Small
     else if(strcmp(cstr,"Quicksrnet_small_w8a8.serialized.bin")==0 || strcmp(cstr,"libQuicksrnet_small_w8a8.so")==0){
         modelobj = new QuickSRNetSmall();
+    }
+    else if(strcmp(cstr,"DepthAnythingv2_fp16.serialized.bin")==0){
+        modelobj = new DepthAnythingV2();
     }
     else
     {
