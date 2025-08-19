@@ -48,7 +48,7 @@ public class QNNActivity extends AppCompatActivity {
     Spinner inputImageSpin;
     Spinner modelspin;
     String[] options = {"No Selection","Sample1.jpg","Sample2.jpg"}; //Image filenames on which model inference is made
-    String[] modeloptions = { "No Selection", "ESRGAN", "XLSR", "quickSR_large", "quickSR_medium", "quickSR_small"};
+    String[] modeloptions = { "No Selection", "ESRGAN", "XLSR", "quickSR_large", "quickSR_medium", "quickSR_small", "DepthAnythingV2"};
 //    String[] modeldlcname = { "None", "sesr_quant_128_4.dlc", "esrgan_quant_128_4.dlc", "xlsr_quant_128_4.dlc", "libQuicksrnet_large_quant.serialized.bin", "quicksrnet_medium_quant_128_4.dlc","quicksrnet_small_quant_128_4.dlc"};
     String[] backendname = {"libQnnCpu.so", "libQnnHtp.so"};
     Map<String, String> runtimeSpecificModels = new HashMap<String, String>() {{
@@ -62,6 +62,9 @@ public class QNNActivity extends AppCompatActivity {
         put(modeloptions[4] + "|" + backendname[1], "Quicksrnet_medium_w8a8.serialized.bin");
         put(modeloptions[5] + "|" + backendname[0], "libQuicksrnet_small_w8a8.so");
         put(modeloptions[5] + "|" + backendname[1], "Quicksrnet_small_w8a8.serialized.bin");
+        put(modeloptions[6] + "|" + backendname[0], "libdepthanythingv2_fp16.so");
+        put(modeloptions[6] + "|" + backendname[1], "DepthAnythingv2_fp16.serialized.bin");
+
     }};
     protected void executeRadioButton(int checkedId) {
         ProgressBar progressBar;

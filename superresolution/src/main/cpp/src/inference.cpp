@@ -228,7 +228,15 @@ bool executeModel(cv::Mat &inputimg, cv::Mat &outputimg, float &milli_time, Mode
     {
         __android_log_print(ANDROID_LOG_ERROR, "QNN_INF", "***********************************dims = %lu\n >>>>",dims[i]);
     }
-    outputimg = cv::Mat(512, 512, CV_32FC3, out.data);
+
+    if(dims[3] == 3){
+        outputimg = cv::Mat(dims[1], dims[2], CV_32FC3, out.data);
+    }
+    else if (dims[3]==1)
+    {
+        outputimg = cv::Mat(dims[1], dims[2], CV_32FC1, out.data);
+        cv::cvtColor(outputimg, outputimg, cv::COLOR_GRAY2BGR);
+    }
 
     __android_log_print(ANDROID_LOG_ERROR, "QNN_INF ", "");
 

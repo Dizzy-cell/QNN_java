@@ -15,15 +15,21 @@ device = hub.Device("Samsung Galaxy S24")
 #
 # pt_model = torch.jit.trace(torch_model, [torch.tensor(data[0]) for _, data in sample_inputs.items()])
 
-model_tf = 'ESRGAN.tflite'
-model_onnx = 'ESRGAN.onnx'
-model_bin ='esrgan.bin'
+# model_tf = 'ESRGAN.tflite'
+# model_onnx = 'ESRGAN.onnx'
+# model_bin ='esrgan.bin'
+#
+# model_onnx = 'XLSR.onnx'
+# model_bin = 'xlsr.bin'
+# model_bin ='libxlsr.so'
+#
+# input_shape = (1, 3, 128, 128)
 
-model_onnx = 'XLSR.onnx'
-model_bin = 'xlsr.bin'
-model_bin ='libxlsr.so'
+model_onnx = 'model.onnx'
+model_bin = 'DepthAnythingv2_fp16.serialized.bin'
+#model_bin ='libdepthanythingv2_fp16.so'
 
-input_shape = (1, 3, 128, 128)
+input_shape = (1, 3, 518, 518)
 
 # Compile model on a specific device
 compile_job = hub.submit_compile_job(
